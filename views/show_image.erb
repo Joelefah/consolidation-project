@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>Show Image</title>
+    </head>
+    <body>
+        <h1>See Image</h1>
+  <% @items.each do |item| %>
+  <li id="<%= item[:id] %>">
+  <img src="/<%=item[:path]%>" height='100' width='100'/>
+  <% end %>
+    </body>
+</html>

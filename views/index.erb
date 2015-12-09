@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+  <body>
+    <section>
+      <div><a href="/new" class="btn">Add Item</a></div>
+    </section>
+    <section>
+      <ul id="list" class="unstyled">
+         <% @items.each do |item| %>
+                <li id="<%= item[:id] %>">
+                  <p id="space">
+                   Item: <%= item[:name] %>
+                  </p>
+                  <p id="space">
+                    Price: £<%= item[:price]%>
+                  </p>
+                  <p>
+                    Weight: <%= item[:weight]%> grams 
+                  </p>
+                 <img src="/<%=item[:path]%>" height='100' width='100'/> 
+                </li>
+        <% end %>
+      </ul>
+    </section> 
+  </body>
+</html>
+
