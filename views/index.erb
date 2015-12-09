@@ -5,25 +5,34 @@
 </head>
   <body>
     <section>
+      <div class="header">
+        <div class="container">
+          <div class="logo">
+          <h1><a>Project</a></h1>  
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
       <div><a href="/new" class="btn">Add Item</a></div>
     </section>
     <section>
-      <ul id="list" class="unstyled">
-         <% @items.each do |item| %>
+      <div class="container">
+        <span class="item">
+          <ul id="list" class="unstyled">
+             <% @items.each do |item| %>
+             <hr class="full-line">
+             <img src="/<%=item[:path]%>" height='100' width='100'/> 
                 <li id="<%= item[:id] %>">
-                  <p id="space">
-                   Item: <%= item[:name] %>
+                   <span> Item: <%= item[:name] %></span>
+                   <span> Price: £<%= item[:price]%></span>
+                   <span> Weight: <%= item[:weight]%> grams </span>
                   </p>
-                  <p id="space">
-                    Price: £<%= item[:price]%>
-                  </p>
-                  <p>
-                    Weight: <%= item[:weight]%> grams 
-                  </p>
-                 <img src="/<%=item[:path]%>" height='100' width='100'/> 
                 </li>
-        <% end %>
-      </ul>
+             <% end %>
+          </ul>
+        </span>
+      </div>
     </section> 
   </body>
 </html>

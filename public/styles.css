@@ -1,47 +1,82 @@
-  div a {
-          border: 2px solid #6495ED;
-          border-radius: 5px;
-          text-decoration: none;
-          background-color: #6495ED;
-          height: 25px;
-          width: 120px;
-          margin: none;
-          text-align: center;
-          color: white;
-          font-family: Verdana, sans-serif;
-        }
- 
-  body {  
-          background: #b3ecff; /* fallback for old browsers */
-          background: -webkit-linear-gradient(to left, #b3ecff , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
-          background: linear-gradient(to left, #b3ecff , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-          font-family: Century Gothic, Times, serif;
-          font-weight: 200;
-          line-height: 1.5;
-       }
+    div a {
+             border: 2px solid #0000cc;
+             border-radius: 5px;
+             text-decoration: none;
+             height: 25px;
+             width: 120px;
+             margin: none;
+             text-align: center;
+             color: black;
+             font-family: Century Gothic, Times, serif;
+             margin-left: -30px;
+          }
+   
+     body {  
+             background: #2BC0E4; /* fallback for old browsers */
+             background: -webkit-linear-gradient(to left, #2BC0E4 , #EAECC6); /* Chrome 10-25, Safari 5.1-6 */
+             background: linear-gradient(to left, #2BC0E4 , #EAECC6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+             font-family: Century Gothic, Times, serif;
+             font-weight: 200;
+             line-height: 1.5;
+             width: 100%;
+             margin: auto;
+          }
 
-  ul  { 
-          list-style-type: none;
-      }
+       li {
+             list-style-type: none;
+          }
 
-#content, #weight, #price
-      {
-          display: block;
-      } 
+   li span { 
+             
+             float: left;
+             margin-left: 45px;
+          }
 
-label {
-         line-height: 40px;
-      }
+    .item {
+            float: right;
+          }   
 
-p #space {
-           width: 40px;
-         }
+    #name, #weight, #price
+          {
+             display: block;
+          } 
 
-.btn {  
-        line-height: 1.5px;
-        font-size: 100%;
-        margin: 3px;
-        padding: 10px;
-     }
+    label {
+             line-height: 40px;
+          }
+
+ p #space {
+             width: 40px;
+          }
+
+     .btn {  
+             line-height: 1.5px;
+             font-size: 75%;
+             margin: 3px;
+             padding: 10px;
+          }
+
+.container {  
+             width: 450px;
+             margin: 0 auto;
+           }
+
+  .header {
+             width: 100%;
+             background-color: white; 
+             top: 0;
+          }
+
+  .form-inline  {
+        border-radius: 3px;
+        width: 480px;
+        height: 280px;
+        margin-left: -30px;
+        margin-top: 75px;
+        background-color: #fff;
+        border-radius: 2px;
+        padding: 40px 35px;
+
+  }
   
 

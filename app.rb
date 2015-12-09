@@ -1,5 +1,41 @@
 require 'sinatra'
 require 'data_mapper'
+require 'omniauth-twitter'
+require 'twitter'
+
+use OmniAuth::Builder do
+  provider :twitter, 'kaEWjHXCrRxPHEQxwfddFfYgq', 'lErFeFL0QqqBxZKyibJbgjtUOWSQav9PrmHrBw46GPlkEGPKqE'
+end
+
+configure do
+  enable :sessions
+end
+
+helpers do
+  def admin?
+    true
+  end
+end
+
+get '/login' do
+  redirect to("/auth/twitter")
+  session[:admin]=true
+end
+
+get '/logout' do
+  session[:admin] = nil
+  redirect '/'
+end
+
+get '/auth/twitter/callback' do
+  env['omniauth.auth'] ? session[:admin] = true : halt(401,'Not Authorized')
+  redirect '/'
+end
+
+get '/auth/failure' do
+  params[:message]
+end
+
 
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/todo_list.db")
   
@@ -13,7 +49,7 @@ class Item
   property :path      , Text
 end
 
-DataMapper.finalize.auto_upgrade!
+DataMapper.finalize.auto_migrate!
 
 get '/' do
   @items = Item.all(:order => :created.desc)
@@ -22,6 +58,7 @@ get '/' do
 end
 
 get '/new' do
+  halt(401,'Not Authorized') unless admin?
   erb :form
 end
 
