@@ -24,10 +24,9 @@
              <hr class="full-line">
              <img src="/<%=item[:path]%>" height='100' width='100'/> 
                 <li id="<%= item[:id] %>">
-                   <span> Item: <%= item[:name] %></span>
-                   <span> Price: £<%= item[:price]%></span>
-                   <span> Weight: <%= item[:weight]%> grams </span>
-                  </p>
+                    Item: <%= item[:name] %>
+                    Price: £<%= item[:price]%>
+                    Weight: <%= item[:weight]%> grams 
                 </li>
              <% end %>
           </ul>

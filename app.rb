@@ -49,7 +49,7 @@ class Item
   property :path      , Text
 end
 
-DataMapper.finalize.auto_migrate!
+DataMapper.finalize.auto_upgrade!
 
 get '/' do
   @items = Item.all(:order => :created.desc)
